@@ -3,6 +3,9 @@ import Image from "next/image";
 import Chat from "@/components/chat";
 import styles from "./page.module.css";
 import logo from "../public/logo.jpg";
+import ModelDisplay from "../components/model";
+import { CORE_MODELS, EXAMPLES } from "@/data";
+import TabButton from "@/components/TabButton";
 
 export default function Home() {
   return (
@@ -19,6 +22,24 @@ export default function Home() {
         </div>
         <h1>Chatbot</h1>
       </header>
+      <div>
+        <ul className={styles.modelDisplay}>
+          {CORE_MODELS.map((model) => (
+            <TabButton>
+              <ModelDisplay {...model} />
+            </TabButton>
+          ))}
+        </ul>
+      </div>
+
+      {/* <section>
+        <ul className={styles.modelDisplay}>
+          {CORE_MODELS.map((model) => (
+            <ModelDisplay {...model} />
+          ))}
+        </ul>
+      </section> */}
+
       <Chat />
     </>
   );
