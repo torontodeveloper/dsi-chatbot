@@ -1,17 +1,18 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import styles from "./model-display.module.css";
 interface ModelInterfaceProps {
-  image: string;
+  image: StaticImageData;
   title: string;
   description: string;
 }
 
 const ModelDisplay = ({ image, title, description }: ModelInterfaceProps) => {
   return (
-    <button>
-      <Image src={image} alt={title} width={300} height={300} priority={true} />
+    <div className={styles.container}>
+      <Image src={image} alt={title} width={100} height={100} priority={true} />
       <h1>{title}</h1>
       <p>{description}</p>
-    </button>
+    </div>
   );
 };
 export default ModelDisplay;

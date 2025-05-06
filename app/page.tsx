@@ -6,8 +6,16 @@ import logo from "../public/logo.jpg";
 import ModelDisplay from "../components/model";
 import { CORE_MODELS, EXAMPLES } from "@/data";
 import TabButton from "@/components/TabButton";
+import useApiServices from "@/components/rest-api/api-services";
+import { ChangeEvent, useState } from "react";
+import ConversationAgent from "@/components/conversation-agent";
 
+type BotModelProps = {
+  prompt: string;
+};
 export default function Home() {
+  
+  
   return (
     <>
       <header className={styles.page}>
@@ -24,8 +32,8 @@ export default function Home() {
       </header>
       <div>
         <ul className={styles.modelDisplay}>
-          {CORE_MODELS.map((model) => (
-            <TabButton>
+          {CORE_MODELS.map((model, index) => (
+            <TabButton key={index}>
               <ModelDisplay {...model} />
             </TabButton>
           ))}
@@ -39,8 +47,8 @@ export default function Home() {
           ))}
         </ul>
       </section> */}
-
-      <Chat />
+      <ConversationAgent />
+      {/* <Chat /> */}
     </>
   );
 }
