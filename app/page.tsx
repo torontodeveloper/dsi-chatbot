@@ -14,8 +14,6 @@ type BotModelProps = {
   prompt: string;
 };
 export default function Home() {
-  
-  
   return (
     <>
       <header className={styles.page}>
@@ -47,8 +45,10 @@ export default function Home() {
           ))}
         </ul>
       </section> */}
-      <ConversationAgent />
-      {/* <Chat /> */}
+      <div className={styles.botContainer}>
+        <ConversationAgent />
+        {/* <Chat /> */}
+      </div>
     </>
   );
 }

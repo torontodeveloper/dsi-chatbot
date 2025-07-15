@@ -6,6 +6,7 @@ const Chat = () => {
     useChat();
   return (
     <div className={styles.container}>
+      <h2>Using Vercel openai</h2>
       {messages.map((message, index) => (
         <div key={index} className={styles.chat}>
           {message.role == "user" ? "User: " : "Robot: "}
@@ -13,7 +14,7 @@ const Chat = () => {
         </div>
       ))}
       <form onSubmit={handleSubmit} className={styles.form}>
-        <label htmlFor="chat">Plz type something?...</label>
+        <label htmlFor="chat">Plz type ur prompt?...</label>
         <input type="text" value={input} onChange={handleInputChange} />
         <br />
         <button type="submit" id="chat">

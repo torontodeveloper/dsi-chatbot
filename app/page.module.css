@@ -1,3 +1,9 @@
 .modelDisplay {
     display: flex;
 }
+
+.botContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: cornsilk;
+}

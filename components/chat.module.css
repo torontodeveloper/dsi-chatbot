@@ -1,8 +1,8 @@
 .container {
-    margin: 2rem;
+    margin: 1rem!important;
     font-size: 1rem;
     color: #9c7fd3;
-    text-transform: lowercase;
+    text-transform: titlecase;
     max-width: 50rem;
     margin: auto;
     padding: 2rem;
